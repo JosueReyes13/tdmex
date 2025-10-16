@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+/* Reset básico */
+.navbar {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+.navbar * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar i {
+  margin-right: 10px;
+}
+
+/*---------- Estilos principales ------------*/
+.navbarLogo {
+  padding: 10px 15px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbarMainbg {
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 0px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.navbarContent {
+  overflow: hidden;
+  position: relative;
+}
+
+.navbarContent ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+
+.navbarContent ul li a i {
+  margin-right: 10px;
+}
+
+.navbarContent li {
+  list-style-type: none;
+  display: inline-block;
+  position: relative;
+}
+
+.navbarContent ul li a {
+  color: #000000; /* Texto gris oscuro */
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  display: block;
+  padding: 20px 20px;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  white-space: nowrap;
+}
+
+.navbarContent ul li.active a {
+  color: #ffffff; /* Azul moderno para activo */
+  background-color: transparent;
+  transition: all 0.7s;
+}
+
+.navbarContent a:not(:only-child):after {
+  content: "\f105";
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 14px;
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  padding-right: 3px;
+  vertical-align: middle;
+  font-weight: 900;
+  transition: 0.5s;
+  color: #666; /* Color de la flecha */
+}
+
+.navbarContent .active a:not(:only-child):after {
+  transform: rotate(90deg);
+  color: #2563eb; /* Color de flecha cuando está activo */
+}
+
+.horiSelector {
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  background-color: #0C4B45; /* Azul para el selector */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  margin-top: 10px;
+  z-index: 0;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+.horiSelector .right,
+.horiSelector .left {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: #0C4B45; /* Mismo azul para las partes curvas */
+  bottom: 10px;
+}
+
+.horiSelector .right {
+  right: -25px;
+}
+
+.horiSelector .left {
+  left: -25px;
+}
+
+.horiSelector .right:before,
+.horiSelector .left:before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffffff; /* Fondo blanco para los círculos */
+}
+
+.horiSelector .right:before {
+  bottom: 0;
+  right: -25px;
+}
+
+.horiSelector .left:before {
+  bottom: 0;
+  left: -25px;
+}
+
+/* Utilidades para layout */
+.navbarNav {
+  display: flex !important;
+  flex-direction: row !important;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  position: relative;
+  z-index: 1;
+}
+
+.mlAuto {
+  margin-left: auto;
+}
+
+.textDark {
+  color: #333333 !important; /* Texto oscuro */
+}
+
+/* Estados hover */
+.navbarContent ul li a:hover {
+  color: #000000; /* Azul al hacer hover */
+  background-color: rgba(37, 99, 235, 0.05); /* Fondo muy suave al hover */
+  border-radius: 6px;
+  margin: 2px;
+}
+
+.navbarContent ul li.active a:hover {
+  color: #000000; /* Azul más oscuro para activo con hover */
+}
+
+/* Estilos del toggle */
+.navbarToggler {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 12px;
+  color: #333333; /* Color oscuro para el ícono del toggle */
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.navbarToggler:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.navbarToggler:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+}
+
+.navbarCollapse {
+  transition: all 0.3s ease-in-out;
+}
+
+.navbarCollapse.show {
+  display: block !important;
+}
+
+/* Media Queries */
+@media (min-width: 992px) {
+  .navbarExpandCustom {
+    display: flex !important;
+    flex-flow: row nowrap !important;
+    justify-content: flex-start !important;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .navbarNav {
+    flex-direction: row !important;
+    display: flex !important;
+  }
+  
+  .navbarToggler {
+    display: none;
+  }
+  
+  .navbarCollapse {
+    display: flex !important;
+    flex-basis: auto;
+    flex-grow: 1;
+  }
+  
+  .navbarContent li {
+    float: none;
+    display: inline-block;
+  }
+  
+  .navbarNav {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbarExpandCustom {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .navbarNav {
+    flex-direction: column !important;
+    width: 100%;
+  }
+  
+  .navbarContent li {
+    display: block;
+    width: 100%;
+    float: none;
+  }
+  
+  .navbarContent ul li a {
+    padding: 15px 25px;
+    display: block;
+    width: 100%;
+    border-radius: 6px;
+    margin: 2px 0;
+  }
+  
+  .horiSelector {
+    margin-top: 0px;
+    margin-left: 10px;
+    border-radius: 0;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-color: #0C4B45;
+  }
+  
+  .horiSelector .left,
+  .horiSelector .right {
+    right: 10px;
+    background-color: #0C4B45;
+  }
+  
+  .horiSelector .left {
+    top: -25px;
+    left: auto;
+  }
+  
+  .horiSelector .right {
+    bottom: -25px;
+  }
+  
+  .horiSelector .left:before {
+    left: -25px;
+    top: -25px;
+    background-color: #ffffff;
+  }
+  
+  .horiSelector .right:before {
+    bottom: -25px;
+    left: -25px;
+    background-color: #ffffff;
+  }
+}
+
+/* Clases adicionales para elementos específicos */
+.navbarBrand {
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilos para el logo */
+.navbarLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+}
+
+.navbarLogo img {
+  height: 50px;          /* tamaño del logo */
+  width: auto;           /* mantiene proporción */
+  max-width: 180px;      /* ancho máximo */
+  object-fit: contain;   /* evita deformar el logo */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.navbarLogo img:hover {
+  transform: scale(1.05); /* efecto suave al pasar el cursor */
+  filter: brightness(1.1); /* leve brillo para destacar */
+}
+
+/* Tamaño del logo en móvil */
+@media (max-width: 768px) {
+  .navbarLogo img {
+    height: 40px;
+    max-width: 150px;
+  }
+}
+
+/* Estilos adicionales para mejor apariencia */
+.navbarContent ul li a i {
+  color: #000000; /* Color para los íconos */
+  transition: color 0.3s ease;
+}
+
+.navbarContent ul li.active a i {
+  color: #ffffff; /* Color azul para íconos activos */
+}
+
+.navbarContent ul li a:hover i {
+  color: #000000; /* Color azul para íconos al hover */
+}
