@@ -1,0 +1,265 @@
+.container {
+  background: #ffffff; /* Fondo blanco */
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.loopWrapper {
+  margin: 0;
+  position: relative;
+  display: block;
+  width: 100vw;
+  height: 100px;
+  overflow: hidden;
+  border-bottom: 3px solid #0c4b45; /* Línea en #0C4B45 */
+  color: #0c4b45;
+}
+
+.mountain {
+  position: absolute;
+  right: -900px;
+  bottom: -20px;
+  width: 2px;
+  height: 2px;
+  box-shadow: 0 0 0 50px #0c4b45,
+    /* Montañas en #0C4B45 */ 60px 50px 0 70px #0c4b45, 90px 90px 0 50px #0c4b45,
+    250px 250px 0 50px #0c4b45, 290px 320px 0 50px #0c4b45,
+    320px 400px 0 50px #0c4b45, 400px 450px 0 50px #0c4b45,
+    500px 350px 0 60px #0c4b45, 600px 280px 0 55px #0c4b45,
+    700px 320px 0 65px #0c4b45, 800px 380px 0 50px #0c4b45;
+  transform: rotate(130deg);
+  animation: mtn 15s linear infinite;
+}
+
+.hill {
+  position: absolute;
+  right: -900px;
+  bottom: -50px;
+  width: 400px;
+  border-radius: 50%;
+  height: 20px;
+  box-shadow: 0 0 0 50px #0c4b45,
+    /* Colinas en #0C4B45 */ -20px 0 0 20px #0c4b45, -90px 0 0 50px #0c4b45,
+    250px 0 0 50px #0c4b45, 290px 0 0 50px #0c4b45, 620px 0 0 50px #0c4b45,
+    800px 0 0 50px #0c4b45, 1000px 0 0 60px #0c4b45, 1200px 0 0 55px #0c4b45,
+    1400px 0 0 65px #0c4b45;
+  animation: hill 3s linear infinite;
+}
+
+.tree {
+  position: absolute;
+  height: 120px;
+  width: 42px;
+  bottom: 0;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/tree.svg")
+    no-repeat;
+  filter: brightness(0) saturate(100%) invert(24%) sepia(40%) saturate(1200%)
+    hue-rotate(150deg) brightness(90%) contrast(90%); /* Árboles en #0C4B45 */
+  background-size: contain;
+}
+
+.tree1 {
+  animation: tree 2.5s linear infinite;
+}
+
+.tree2 {
+  animation: tree2 1.8s linear infinite;
+}
+
+.tree3 {
+  animation: tree3 6s linear infinite;
+}
+
+.tree4 {
+  animation: tree4 3.5s linear infinite;
+}
+
+.tree5 {
+  animation: tree5 2.2s linear infinite;
+}
+
+.rock {
+  margin-top: -17%;
+  height: 15px;
+  width: 15px;
+  bottom: -2px;
+  border-radius: 20px;
+  position: absolute;
+  background: #0c4b45; /* Rocas en #0C4B45 */
+  animation: rock 3s linear infinite;
+}
+
+.rock2 {
+  animation: rock2 4s linear infinite;
+}
+
+.rock3 {
+  animation: rock3 5s linear infinite;
+}
+
+.truck {
+  transition: all ease;
+  width: 100px;
+  margin-right: -60px;
+  bottom: 0px;
+  right: 50%;
+  position: absolute;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/truck.svg")
+    no-repeat;
+  background-size: contain;
+  height: 70px;
+  animation: truck 4s 0.08s ease infinite;
+  filter: brightness(0) saturate(100%) invert(24%) sepia(40%) saturate(1200%)
+    hue-rotate(150deg) brightness(90%) contrast(90%); /* Camión en #0C4B45 */
+}
+
+.truck:before {
+  content: " ";
+  position: absolute;
+  width: 25px;
+  box-shadow: -30px 28px 0 1.5px #0c4b45,
+    /* Reflectores en #0C4B45 */ -35px 18px 0 1.5px #0c4b45;
+  animation: wind 1.5s 0s ease infinite;
+}
+
+.wheels {
+  transition: all ease;
+  width: 100px;
+  margin-right: -60px;
+  bottom: 0px;
+  right: 50%;
+  position: absolute;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/wheels.svg")
+    no-repeat;
+  height: 18px;
+  margin-bottom: 0;
+  animation: truck 4s 0.001s ease infinite;
+  background-size: contain;
+  filter: brightness(0) saturate(100%) invert(24%) sepia(40%) saturate(1200%)
+    hue-rotate(150deg) brightness(90%) contrast(90%); /* Ruedas en #0C4B45 */
+}
+
+/* Animaciones */
+@keyframes tree {
+  0% {
+    transform: translate(2000px);
+  }
+  100% {
+    transform: translate(-100px);
+  }
+}
+
+@keyframes tree2 {
+  0% {
+    transform: translate(1500px);
+  }
+  100% {
+    transform: translate(-100px);
+  }
+}
+
+@keyframes tree3 {
+  0% {
+    transform: translate(3000px);
+  }
+  100% {
+    transform: translate(-100px);
+  }
+}
+
+@keyframes tree4 {
+  0% {
+    transform: translate(2500px);
+  }
+  100% {
+    transform: translate(-100px);
+  }
+}
+
+@keyframes tree5 {
+  0% {
+    transform: translate(1800px);
+  }
+  100% {
+    transform: translate(-100px);
+  }
+}
+
+@keyframes rock {
+  0% {
+    right: -200px;
+  }
+  100% {
+    right: 2000px;
+  }
+}
+
+@keyframes rock2 {
+  0% {
+    right: -500px;
+  }
+  100% {
+    right: 2500px;
+  }
+}
+
+@keyframes rock3 {
+  0% {
+    right: -800px;
+  }
+  100% {
+    right: 3000px;
+  }
+}
+
+@keyframes truck {
+  0% {
+  }
+  6% {
+    transform: translateY(0px);
+  }
+  7% {
+    transform: translateY(-6px);
+  }
+  9% {
+    transform: translateY(0px);
+  }
+  10% {
+    transform: translateY(-1px);
+  }
+  11% {
+    transform: translateY(0px);
+  }
+  100% {
+  }
+}
+
+@keyframes wind {
+  0% {
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  100% {
+  }
+}
+
+@keyframes mtn {
+  100% {
+    transform: translateX(-3000px) rotate(130deg);
+  }
+}
+
+@keyframes hill {
+  100% {
+    transform: translateX(-3500px);
+  }
+}

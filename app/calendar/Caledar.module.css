@@ -1,0 +1,15 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.title {
+  color: #0c4b45;
+  font-size: 2.5rem;
+}
