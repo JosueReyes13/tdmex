@@ -1,0 +1,206 @@
+.contacto {
+  padding: 60px 0;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contactoTitulo {
+  font-size: 2rem;
+  color: #0c4b45;
+  font-weight: bold;
+}
+
+.contactoSubtitulo {
+  font-size: 1rem;
+  color: #0c4b45;
+  margin-bottom: 30px;
+}
+
+/* Contenedor Principal */
+.contactoContent {
+  display: flex;
+  gap: 30px;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección izquierda - Información */
+.contactoInfo {
+  flex: 1;
+  text-align: left;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #0c4b45;
+}
+
+.infoItem h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #0c4b45;
+}
+
+.infoItem p {
+  margin: 0;
+  font-size: 1rem;
+  color: #0c4b45;
+}
+
+.mapContainer {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mapImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Sección derecha - Formulario */
+.contactoFormulario {
+  flex: 1;
+  text-align: left;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formIntro {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(12, 75, 69, 0.2);
+}
+
+.formIntro h3 {
+  color: #0c4b45;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.formIntro p {
+  color: #0c4b45;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Contenedor del formulario */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Fila para Nombre y Email */
+.formRow {
+  display: flex;
+  gap: 15px;
+}
+
+/* Estilos generales de los grupos de input */
+.formGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para los labels */
+.formGroup label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #0c4b45;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+/* Estilos para los inputs y textarea */
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(12, 75, 69, 0.4);
+  border-radius: 2px;
+  font-size: 1rem;
+  color: #0c4b45;
+  background-color: transparent;
+  font-family: "Raleway", sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efecto de foco en los inputs y textarea */
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: #0c4b45;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(12, 75, 69, 0.1);
+}
+
+/* Placeholder color */
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: rgba(12, 75, 69, 0.6);
+}
+
+/* Botón de Enviar */
+.ctaC {
+  padding: 16px 32px;
+  color: #0c4b45;
+  background-color: transparent;
+  border: 1px solid rgba(12, 75, 69, 0.4);
+  border-radius: 2px;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-top: 32px;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 0px rgba(12, 75, 69, 0.2);
+  transition: all 0.4s ease;
+}
+
+.ctaC:hover {
+  border: 1px solid rgba(12, 75, 69, 0.1);
+  box-shadow: inset 0px -80px 0px rgba(12, 75, 69, 0.1);
+  transform: translateY(-5px);
+}
+
+/* Responsividad */
+@media screen and (max-width: 799px) {
+  .contactoContent {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .formRow {
+    flex-direction: column;
+  }
+
+  .contactoFormulario {
+    padding: 20px;
+  }
+  
+  .contactoTitulo {
+    font-size: 1.7rem;
+  }
+}

@@ -14,8 +14,8 @@ const Navbar = () => {
      { href: '/', icon: 'fas fa-home', label: 'Inicio' },           // Un hogar para la página principal
         { href: '/address-book', icon: 'fas fa-users', label: 'Nosotros' }, // Grupo de personas para “Nosotros”
         { href: '/unidades', icon: 'fas fa-truck', label: 'Unidades' }, // Cuadrícula para representar secciones/unidades
-        { href: '/calendar', icon: 'fas fa-map-marker-alt', label: 'Rastreo' }, // Marcador de ubicación para “Rastreo”
-        { href: '/charts', icon: 'fas fa-envelope', label: 'Contacto' }  
+        { href: '/rastreo', icon: 'fas fa-map-marker-alt', label: 'Rastreo' }, // Marcador de ubicación para “Rastreo”
+        { href: '/contacto', icon: 'fas fa-envelope', label: 'Contacto' }  
   ];
 
   useEffect(() => {
