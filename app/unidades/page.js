@@ -6,7 +6,7 @@ export default function Unidades() {
       id: 1,
       tipo: "Camión ligero (3 a 8 toneladas)",
       descripcion: "Ideal para transporte urbano o de corta distancia, perfecto para carga ligera y entregas rápidas.",
-      imagen: "/fotos/unidad3-8.jpg",
+      imagen: "/fotos/unidadchica.jpeg",
       categoria: "ligero",
       caracteristicas: [
         "Monitoreo satelital 24/7",
@@ -19,7 +19,7 @@ export default function Unidades() {
       id: 2,
       tipo: "Camión mediano (9 a 15 toneladas)",
       descripcion: "Excelente para distancias medias, con capacidad para grandes volúmenes sin comprometer la eficiencia.",
-      imagen: "/fotos/unidad9-15.jpg",
+      imagen: "/fotos/unidadmediana.jpeg",
       categoria: "mediano",
       caracteristicas: [
         "Monitoreo satelital 24/7",
@@ -70,6 +70,9 @@ export default function Unidades() {
     return acc;
   }, {});
 
+  // Función para determinar si es categoría pesada
+  const esCategoriaPesada = (categoria) => categoria === 'pesado';
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Nuestras Unidades</h1>
@@ -112,20 +115,37 @@ export default function Unidades() {
       {Object.entries(unidadesPorCategoria).map(([categoria, unidadesCategoria]) => (
         <div key={categoria} className={styles.categoriaSection}>
           <h2 className={styles.categoriaTitle}>{categorias[categoria]}</h2>
-          <div className={styles.grid}>
+          
+          {/* Grid diferente para unidades pesadas */}
+          <div className={esCategoriaPesada(categoria) ? styles.gridPesado : styles.grid}>
             {unidadesCategoria.map((unidad) => (
               <div key={unidad.id} className={styles.card}>
-                <img src={unidad.imagen} alt={unidad.tipo} className={styles.image} />
-                <div className={styles.cardBody}>
-                  <h2 className={styles.cardTitle}>{unidad.tipo}</h2>
-                  <p className={styles.cardText}>{unidad.descripcion}</p>
+                <div className={esCategoriaPesada(categoria) ? styles.imageContainerPesado : styles.imageContainer}>
+                  <img 
+                    src={unidad.imagen} 
+                    alt={unidad.tipo} 
+                    className={styles.image} 
+                  />
+                </div>
+                <div className={esCategoriaPesada(categoria) ? styles.cardBodyPesado : styles.cardBody}>
+                  <h2 className={esCategoriaPesada(categoria) ? styles.cardTitlePesado : styles.cardTitle}>
+                    {unidad.tipo}
+                  </h2>
+                  <p className={esCategoriaPesada(categoria) ? styles.cardTextPesado : styles.cardText}>
+                    {unidad.descripcion}
+                  </p>
                   
                   {/* Características adicionales */}
-                  <div className={styles.caracteristicas}>
-                    <h4 className={styles.caracteristicasTitle}>Características:</h4>
+                  <div className={esCategoriaPesada(categoria) ? styles.caracteristicasPesado : styles.caracteristicas}>
+                    <h4 className={esCategoriaPesada(categoria) ? styles.caracteristicasTitlePesado : styles.caracteristicasTitle}>
+                      Características:
+                    </h4>
                     <ul className={styles.caracteristicasList}>
                       {unidad.caracteristicas.map((caracteristica, index) => (
-                        <li key={index} className={styles.caracteristicaItem}>
+                        <li 
+                          key={index} 
+                          className={esCategoriaPesada(categoria) ? styles.caracteristicaItemPesado : styles.caracteristicaItem}
+                        >
                           {caracteristica}
                         </li>
                       ))}
