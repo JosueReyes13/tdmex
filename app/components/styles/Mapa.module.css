@@ -10,13 +10,17 @@
 .imageContainer {
   flex: 1;
   min-width: 300px;
+  align-items: center; /* Centra la imagen verticalmente dentro de su contenedor */
+  justify-content: center; /* Centra la imagen horizontalmente dentro de su contenedor */
 }
 
 .image {
   width: 100%;
-  height: auto;
+  max-width: 500px;
+  height: 350px; /* Altura fija para controlar el recorte */
   border-radius: 8px;
-  object-fit: cover;
+  object-fit: cover; /* Esto recorta la imagen manteniendo proporciones */
+  object-position: center 15%; /* Ajusta el recorte vertical: 0% top, 100% bottom */
 }
 
 .textContainer {
@@ -43,6 +47,49 @@
   white-space: pre-line;
 }
 
+.ciudadesWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+}
+
+.ciudadesList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 500px;
+}
+
+.ciudadItem {
+  padding: 0.8rem 1.2rem;
+  background-color: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #0c4b45;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.ciudadItem:hover {
+  background-color: #e3f2fd;
+  border-color: #0c4b45;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(12, 75, 69, 0.15);
+}
+
+.ciudadItem::before {
+  content: "📍";
+  margin-right: 0.8rem;
+  font-size: 0.9rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .container {
@@ -53,6 +100,10 @@
 
   .imageContainer {
     min-width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .heading {
