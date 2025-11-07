@@ -1,34 +1,44 @@
 import styles from "./styles/Imagen.module.css";
+import { FaCheck } from "react-icons/fa";
 
 export default function Imagen() {
   const imagenes = [
     {
       id: 1,
-      imagen: "./fotos/EFICACES.jpg",
-      alt: "Descrioncion de imagen",
-      titulo: "Primer valor",
-      descripcion:
-        "In velit voluptate veniam sit consequat ex mollit. Esse nostrud in deserunt nisi aute.",
+      imagen: "./fotos/Primervalor.jpeg",
+      alt: "Transporte Terrestre de Carga",
+      titulo: "Transporte Terrestre de Carga",
+      descripcion: [
+        "Servicio de transporte de mercancías a nivel urbano, nacional e internacional.",
+        "Flota moderna de camiones, remolques y vehículos especializados.",
+        "Seguimiento satelital en tiempo real y control de rutas."
+      ],
       width: 300,
       height: 200,
     },
     {
       id: 2,
-      imagen: "./fotos/CRUZANDO-FRONTERAS.jpg",
-      alt: "Descrioncion de imagen",
-      titulo: "Segundo Valor",
-      descripcion:
-        "Aliqua id fugiat ut ut enim exercitation velit qui ut consectetur qui adipisicing consectetur consequat. Ex tempor ad labore culpa enim aute amet tempor id dolor reprehenderit non do.",
+      imagen: "./fotos/Segudovalor.jpeg",
+      alt: "Logística Integral",
+      titulo: "Logística Integral",
+      descripcion: [
+        "Planificación, coordinación y ejecución de toda la cadena logística.",
+        "Administración de inventarios y control de existencias.",
+        "Optimización de rutas y tiempos de entrega."
+      ],
       width: 300,
       height: 200,
     },
     {
       id: 3,
-      imagen: "./fotos/CRUZANDO-FRONTERAS.jpg",
-      alt: "Descrioncion de imagen",
-      titulo: "Tercer valor",
-      descripcion:
-        "Aliqua id fugiat ut ut enim exercitation velit qui ut consectetur qui adipisicing consectetur consequat. Ex tempor ad labore culpa enim aute amet tempor id dolor reprehenderit non do.",
+      imagen: "./fotos/Tercervalor.jpeg",
+      alt: "Seguro de Mercancías",
+      titulo: "Seguro de Mercancías",
+      descripcion: [
+        "Servicio de seguro cobertura amplia para su mercancía.",
+        "Respuesta en Minutos y Confianza en las operaciones logísticas.",
+        "Cobertura personalizada, Cumplimiento de normativas."
+      ],
       width: 300,
       height: 200,
     },
@@ -39,12 +49,12 @@ export default function Imagen() {
       <div className={styles.header}>
         <h2 className={styles.mainTitle}>Transporte TDMEX</h2>
         <p className={styles.mainDescription}>
-          Non dolor cillum eu fugiat nisi tempor eiusmod fugiat est incididunt
-          ipsum nulla. Magna voluptate sunt non nisi nostrud laboris pariatur
-          eiusmod. Do cupidatat veniam occaecat ullamco aliquip amet non ipsum
-          elit labore quis eiusmod aliqua mollit. Consequat eiusmod
-          reprehenderit minim fugiat Lorem eu minim. Enim consequat ut veniam
-          nostrud ullamco eiusmod ut dolore ipsum cillum.
+          Transportes TDMEX es una compañía especializada en servicios integrales de 
+          logística y transporte, orientada a ofrecer soluciones eficientes, seguras y 
+          personalizadas para la gestión del flujo de mercancías a nivel nacional e 
+          internacional. Nuestra misión es garantizar la entrega puntual y segura de 
+          los productos de nuestros clientes, optimizando tiempos y costos mediante la 
+          innovación tecnológica y un equipo altamente calificado.
         </p>
       </div>
       <div className={styles.container}>
@@ -60,7 +70,15 @@ export default function Imagen() {
               />
             </div>
             <h3 className={styles.title}>{item.titulo}</h3>
-            <p className={styles.description}>{item.descripcion}</p>
+            {/* Lista con íconos de React Icons */}
+            <ul className={styles.descriptionList}>
+              {item.descripcion.map((punto, index) => (
+                <li key={index} className={styles.descriptionItem}>
+                  <FaCheck className={styles.checkIcon} />
+                  <span className={styles.descriptionText}>{punto}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>

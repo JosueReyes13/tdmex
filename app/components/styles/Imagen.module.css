@@ -1,4 +1,3 @@
-/* styles/Imagen.module.css */
 .gallery {
   padding: 4rem 0;
   background-color: #fff;
@@ -83,11 +82,41 @@
   line-height: 1.3;
 }
 
-.description {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #0c4b45;
+/* ESTILOS ACTUALIZADOS PARA LA LISTA CON ÍCONOS */
+.descriptionList {
+  list-style: none;
+  padding: 0;
   margin: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.descriptionItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+  color: #0c4b45;
+  font-size: 1rem;
+}
+
+.checkIcon {
+  margin-right: 12px;
+  color: #27ae60; /* Verde para los checkmarks */
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 3px;
+  transition: transform 0.2s ease;
+}
+
+.descriptionItem:hover .checkIcon {
+  transform: scale(1.1);
+  color: #2ecc71; /* Verde más claro al hacer hover */
+}
+
+.descriptionText {
+  flex: 1;
+  text-align: left;
 }
 
 /* Responsive */
@@ -116,5 +145,27 @@
 
   .imageContainer {
     height: 200px;
+  }
+
+  .descriptionList {
+    text-align: center;
+  }
+
+  .descriptionItem {
+    justify-content: flex-start;
+    text-align: left;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .descriptionItem {
+    align-items: center;
+  }
+  
+  .checkIcon {
+    margin-top: 2px;
   }
 }
