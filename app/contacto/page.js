@@ -1,16 +1,20 @@
 "use client";
 
-import React, { useRef, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import emailjs from '@emailjs/browser';
+import React, { useRef, useEffect } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import styles from "./Contacto.module.css";
 
 function Contacto() {
   const form = useRef();
-  const controls = useAnimation();
+  //const controls = useAnimation();
   const sectionRef = useRef(null);
+  const isVisible = useInView(sectionRef, {
+    once: true,
+    threshold: 0.1,
+  });
 
-  useEffect(() => {
+  /*useEffect(() => {
     const handleScroll = () => {
       if (sectionRef.current) {
         const sectionTop = sectionRef.current.getBoundingClientRect().top;
@@ -27,20 +31,15 @@ function Contacto() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [controls]);
+  }, [controls]);*/
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm(
-        "service_fksozsc",
-        "template_wbs7kf8",
-        form.current,
-        {
-          publicKey: "7_DjYNePQDfz9oLar",
-        }
-      )
+      .sendForm("service_fksozsc", "template_wbs7kf8", form.current, {
+        publicKey: "7_DjYNePQDfz9oLar",
+      })
       .then(
         () => {
           alert("Mensaje enviado con éxito");
@@ -75,12 +74,13 @@ function Contacto() {
       ref={sectionRef}
       variants={sectionVariants}
       initial="hidden"
-      animate={controls}
+      animate={isVisible ? "visible" : "hidden"}
     >
       <div className={styles.container}>
         <h2 className={styles.contactoTitulo}>CONTACTO</h2>
         <p className={styles.contactoSubtitulo}>
-          Si tiene alguna duda o sugerencia no dude en contactarnos. Le responderemos a la brevedad.
+          Si tiene alguna duda o sugerencia no dude en contactarnos. Le
+          responderemos a la brevedad.
         </p>
 
         <div className={styles.contactoContent}>
@@ -88,7 +88,7 @@ function Contacto() {
             className={styles.contactoInfo}
             variants={itemVariants}
             initial="hidden"
-            animate={controls}
+            animate={isVisible ? "visible" : "hidden"}
           >
             <div className={styles.infoItem}>
               <span className={styles.icon}>
@@ -96,7 +96,10 @@ function Contacto() {
               </span>
               <div>
                 <h3>Domicilio:</h3>
-                <p>Av. Marcos Montero Ruiz 148a col. La capacha, San pedro Tlaquepaque Jalisco</p>
+                <p>
+                  Av. Marcos Montero Ruiz 148a col. La capacha, San pedro
+                  Tlaquepaque Jalisco
+                </p>
               </div>
             </div>
             <div className={styles.infoItem}>
@@ -119,46 +122,77 @@ function Contacto() {
               </div>
             </div>
             <div className={styles.mapContainer}>
-              <img 
-                src="/fotos/TDMEX1.png" 
-                alt="Ubicación de la empresa" 
+              <img
+                src="/fotos/TDMEX1.png"
+                alt="Ubicación de la empresa"
                 className={styles.mapImage}
               />
             </div>
-
           </motion.div>
 
           <motion.div
             className={styles.contactoFormulario}
             variants={formVariants}
             initial="hidden"
-            animate={controls}
+            animate={isVisible ? "visible" : "hidden"}
           >
             <div className={styles.formIntro}>
               <h3>¿Necesitas más información?</h3>
-              <p>Para más información o dudas, póngase en contacto con nosotros. Estaremos encantados de atenderle y resolver cualquier consulta que pueda tener.</p>
+              <p>
+                Para más información o dudas, póngase en contacto con nosotros.
+                Estaremos encantados de atenderle y resolver cualquier consulta
+                que pueda tener.
+              </p>
             </div>
-            
-            <form ref={form} className={styles.contactForm} onSubmit={sendEmail}>
+
+            <form
+              ref={form}
+              className={styles.contactForm}
+              onSubmit={sendEmail}
+            >
               <div className={styles.formGroup}>
                 <div className={styles.formRow}>
                   <div className={styles.formGroup}>
                     <label htmlFor="name">Nombre</label>
-                    <input type="text" id="name" name="name" placeholder="Nombre" required />
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Nombre"
+                      required
+                    />
                   </div>
                   <div className={styles.formGroup}>
                     <label htmlFor="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Email" required />
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Email"
+                      required
+                    />
                   </div>
                 </div>
               </div>
               <div className={styles.formGroup}>
                 <label htmlFor="subject">Asunto</label>
-                <input type="text" id="subject" name="subject" placeholder="Asunto" required />
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="Asunto"
+                  required
+                />
               </div>
               <div className={styles.formGroup}>
                 <label htmlFor="message">Duda o sugerencia</label>
-                <textarea id="message" name="message" placeholder="Duda o sugerencia" rows="5" required></textarea>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Duda o sugerencia"
+                  rows="5"
+                  required
+                ></textarea>
               </div>
               <button type="submit" className={styles.ctaC}>
                 <i className="fas fa-paper-plane"></i> Enviar

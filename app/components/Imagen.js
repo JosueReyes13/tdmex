@@ -80,7 +80,7 @@ export default function Imagen() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, {
     once: false, // Cambiado a false para que se active cada vez
-    threshold: 0.3, // Se activa cuando el 30% del componente es visible
+    threshold: 0.4, // Se activa cuando el 30% del componente es visible
   });
 
   return (

@@ -1,11 +1,13 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion"; // Importar Framer Motion
 import styles from "./styles/Video.module.css";
 
 const Video = ({
   videoSrc,
   title,
   subtitle,
-  buttonText,
   onButtonClick,
   className = "",
   overlay = false,
@@ -27,6 +29,33 @@ const Video = ({
   const titleClass = `${styles.title} ${styles[titleSize]}`;
   const contentClass = `${styles.content} ${styles[textAlign]}`;
 
+  // Animaciones para Framer Motion
+  const textAnimation = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
   return (
     <div className={containerClass}>
       <video
@@ -42,15 +71,28 @@ const Video = ({
 
       {overlay && <div className={overlayClass} />}
 
-      <div className={contentClass} style={{ color: textColor }}>
-        {title && <h1 className={titleClass}>{title}</h1>}
-        {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
-        {buttonText && (
-          <button className={styles.ctaButton} onClick={onButtonClick}>
-            {buttonText}
-          </button>
+      <motion.div
+        className={contentClass}
+        style={{ color: textColor }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: false, // Para que se repita cada vez que sea visible
+          amount: 0.3, // Se activa cuando el 30% del elemento es visible
+        }}
+        variants={staggerContainer}
+      >
+        {title && (
+          <motion.h1 className={titleClass} variants={textAnimation}>
+            {title}
+          </motion.h1>
         )}
-      </div>
+        {subtitle && (
+          <motion.p className={styles.subtitle} variants={textAnimation}>
+            {subtitle}
+          </motion.p>
+        )}
+      </motion.div>
     </div>
   );
 };
