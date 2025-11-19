@@ -5,13 +5,13 @@ export default function Unidades() {
     {
       id: 1,
       tipo: "Camión ligero (3 a 8 toneladas)",
-      descripcion: "Ideal para transporte urbano o de corta distancia, perfecto para carga ligera y entregas rápidas.",
+      descripcion: "Ideal para transporte urbano, perfecto para carga ligera y entregas rápidas.",
       imagen: "/fotos/unidadchica.jpeg",
       categoria: "ligero",
       caracteristicas: [
         "Monitoreo satelital 24/7",
         "Sistema de seguimiento GPS",
-        "Caja seca refrigerada",
+        "Caja seca ",
         "Seguridad con cámaras IA"
       ]
     },
@@ -23,8 +23,8 @@ export default function Unidades() {
       categoria: "mediano",
       caracteristicas: [
         "Monitoreo satelital 24/7",
-        "Plataforma adaptable",
-        "Sistema de clima controlado",
+        "Plataforma acon Redilas",
+        "Caja seca",
         "Rastreo en tiempo real"
       ]
     },
@@ -38,7 +38,7 @@ export default function Unidades() {
         "Monitoreo satelital 24/7",
         "Caja seca hermética",
         "Control de temperatura",
-        "Sensores de impacto"
+        "Certificado de fumigación",
       ]
     },
     {
@@ -49,9 +49,10 @@ export default function Unidades() {
       categoria: "pesado",
       caracteristicas: [
         "Monitoreo satelital 24/7",
-        "Plataforma extensible",
+        "Plataforma de 40 ft - 50 ft",
         "Sistema de amarre reforzado",
-        "Capacidad para carga extra-dimensional"
+        "Capacidad para carga extra-dimensional",
+        "Certificado de fumigación",
       ]
     },
   ];
@@ -70,9 +71,6 @@ export default function Unidades() {
     return acc;
   }, {});
 
-  // Función para determinar si es categoría pesada
-  const esCategoriaPesada = (categoria) => categoria === 'pesado';
-
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Nuestras Unidades</h1>
@@ -83,7 +81,7 @@ export default function Unidades() {
           Nuestro compromiso es brindar un servicio de primer nivel, por lo tanto, nuestras unidades también deben serlo.
         </p>
         <p className={styles.descripcion}>
-          Nuestras unidades 2020-2024 cuentan con lo último en tecnología con el objetivo de respaldar la confianza 
+          Nuestras unidades cuentan con lo último en tecnología con el objetivo de respaldar la confianza 
           de nuestros clientes, por lo cual todas las cargas van siendo monitoreadas así como evaluadas con nuestras 
           cámaras de Inteligencia Artificial que nos permiten accionar y prevenir ante cualquier eventualidad.
         </p>
@@ -93,7 +91,7 @@ export default function Unidades() {
         
         {/* Explicación de tipos de carga */}
         <div className={styles.tiposCarga}>
-          <h2 className={styles.subtitle}>Tipos de Carga</h2>
+          <h2 className={styles.subtitle}>Tipos de Caja</h2>
           <div className={styles.tiposGrid}>
             <div className={styles.tipoItem}>
               <h3>Carga Seca</h3>
@@ -111,41 +109,37 @@ export default function Unidades() {
         </div>
       </div>
 
-      {/* Unidades por Categoría */}
+      {/* Unidades por Categoría - TODAS USAN LOS MISMOS ESTILOS */}
       {Object.entries(unidadesPorCategoria).map(([categoria, unidadesCategoria]) => (
         <div key={categoria} className={styles.categoriaSection}>
           <h2 className={styles.categoriaTitle}>{categorias[categoria]}</h2>
           
-          {/* Grid diferente para unidades pesadas */}
-          <div className={esCategoriaPesada(categoria) ? styles.gridPesado : styles.grid}>
+          <div className={styles.grid}>
             {unidadesCategoria.map((unidad) => (
               <div key={unidad.id} className={styles.card}>
-                <div className={esCategoriaPesada(categoria) ? styles.imageContainerPesado : styles.imageContainer}>
+                <div className={styles.imageContainer}>
                   <img 
                     src={unidad.imagen} 
                     alt={unidad.tipo} 
                     className={styles.image} 
                   />
                 </div>
-                <div className={esCategoriaPesada(categoria) ? styles.cardBodyPesado : styles.cardBody}>
-                  <h2 className={esCategoriaPesada(categoria) ? styles.cardTitlePesado : styles.cardTitle}>
+                <div className={styles.cardBody}>
+                  <h2 className={styles.cardTitle}>
                     {unidad.tipo}
                   </h2>
-                  <p className={esCategoriaPesada(categoria) ? styles.cardTextPesado : styles.cardText}>
+                  <p className={styles.cardText}>
                     {unidad.descripcion}
                   </p>
                   
                   {/* Características adicionales */}
-                  <div className={esCategoriaPesada(categoria) ? styles.caracteristicasPesado : styles.caracteristicas}>
-                    <h4 className={esCategoriaPesada(categoria) ? styles.caracteristicasTitlePesado : styles.caracteristicasTitle}>
+                  <div className={styles.caracteristicas}>
+                    <h4 className={styles.caracteristicasTitle}>
                       Características:
                     </h4>
                     <ul className={styles.caracteristicasList}>
                       {unidad.caracteristicas.map((caracteristica, index) => (
-                        <li 
-                          key={index} 
-                          className={esCategoriaPesada(categoria) ? styles.caracteristicaItemPesado : styles.caracteristicaItem}
-                        >
+                        <li key={index} className={styles.caracteristicaItem}>
                           {caracteristica}
                         </li>
                       ))}
