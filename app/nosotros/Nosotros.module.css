@@ -1,3 +1,5 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+
 .container {
   background-color: #ffffff;
   color: #000000;
@@ -11,7 +13,7 @@
 }
 
 .mainTitle {
-  color: #0C4B45;
+  color: #0c4b45;
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
@@ -27,7 +29,7 @@
 }
 
 .sectionTitle {
-  color: #0C4B45;
+  color: #0c4b45;
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
@@ -41,16 +43,23 @@
   margin-bottom: 2rem;
 }
 
+.cartasvolteables {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
 .card {
   background-color: #f8f9fa;
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #0C4B45;
+  border-left: 4px solid #0c4b45;
 }
 
 .cardTitle {
-  color: #0C4B45;
+  color: #0c4b45;
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -72,7 +81,7 @@
 }
 
 .valueItem strong {
-  color: #0C4B45;
+  color: #0c4b45;
   display: block;
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
@@ -87,22 +96,43 @@
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
 }
 
 .serviceItem {
-  background-color: #0C4B45;
+  background-color: #0c4b45;
   color: white;
-  padding: 1rem 1.5rem;
-  border-radius: 6px;
+  padding: 1.5rem 1rem;
+  border-radius: 15px;
   text-align: center;
   font-weight: 500;
   transition: transform 0.2s ease;
+  /* NUEVO: Flexbox en columna para texto arriba, ícono abajo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Espacio entre texto e ícono */
+  min-height: 120px; /* Altura mínima para consistencia */
 }
 
 .serviceItem:hover {
   transform: translateY(-2px);
+}
+
+/* NUEVO: Estilo para el texto del servicio */
+.serviceText {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* NUEVO: Estilo para los íconos */
+.serviceIcon {
+  font-size: 3rem; /* Tamaño moderado */
+  color: #ffffff;
+  opacity: 0.9;
 }
 
 /* Responsive */
@@ -110,20 +140,29 @@
   .container {
     padding: 1rem;
   }
-  
+
   .mainTitle {
     font-size: 2rem;
   }
-  
+
   .sectionTitle {
     font-size: 1.5rem;
   }
-  
+
   .grid {
     grid-template-columns: 1fr;
   }
-  
+
   .services {
     grid-template-columns: 1fr;
+  }
+
+  .serviceItem {
+    min-height: 100px;
+    padding: 1rem;
+  }
+
+  .serviceIcon {
+    font-size: 1.8rem;
   }
 }

@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
-
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
 /* Reset básico */
 .navbar {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   box-sizing: border-box;
 }
 
@@ -102,7 +100,7 @@
   left: 0px;
   transition-duration: 0.6s;
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  background-color: #0C4B45; /* Azul para el selector */
+  background-color: #0c4b45; /* Azul para el selector */
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   margin-top: 10px;
@@ -115,7 +113,7 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  background-color: #0C4B45; /* Mismo azul para las partes curvas */
+  background-color: #0c4b45; /* Mismo azul para las partes curvas */
   bottom: 10px;
 }
 
@@ -129,7 +127,7 @@
 
 .horiSelector .right:before,
 .horiSelector .left:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 50px;
   height: 50px;
@@ -215,27 +213,27 @@
     align-items: center;
     padding: 0 20px;
   }
-  
+
   .navbarNav {
     flex-direction: row !important;
     display: flex !important;
   }
-  
+
   .navbarToggler {
     display: none;
   }
-  
+
   .navbarCollapse {
     display: flex !important;
     flex-basis: auto;
     flex-grow: 1;
   }
-  
+
   .navbarContent li {
     float: none;
     display: inline-block;
   }
-  
+
   .navbarNav {
     flex-wrap: nowrap;
   }
@@ -246,18 +244,18 @@
     flex-direction: column;
     padding: 10px;
   }
-  
+
   .navbarNav {
     flex-direction: column !important;
     width: 100%;
   }
-  
+
   .navbarContent li {
     display: block;
     width: 100%;
     float: none;
   }
-  
+
   .navbarContent ul li a {
     padding: 15px 25px;
     display: block;
@@ -265,37 +263,37 @@
     border-radius: 6px;
     margin: 2px 0;
   }
-  
+
   .horiSelector {
     margin-top: 0px;
     margin-left: 10px;
     border-radius: 0;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
-    background-color: #0C4B45;
+    background-color: #0c4b45;
   }
-  
+
   .horiSelector .left,
   .horiSelector .right {
     right: 10px;
-    background-color: #0C4B45;
+    background-color: #0c4b45;
   }
-  
+
   .horiSelector .left {
     top: -25px;
     left: auto;
   }
-  
+
   .horiSelector .right {
     bottom: -25px;
   }
-  
+
   .horiSelector .left:before {
     left: -25px;
     top: -25px;
     background-color: #ffffff;
   }
-  
+
   .horiSelector .right:before {
     bottom: -25px;
     left: -25px;
@@ -335,10 +333,10 @@
 }
 
 .navbarLogo img {
-  height: 50px;          /* tamaño del logo */
-  width: auto;           /* mantiene proporción */
-  max-width: 180px;      /* ancho máximo */
-  object-fit: contain;   /* evita deformar el logo */
+  height: 50px; /* tamaño del logo */
+  width: auto; /* mantiene proporción */
+  max-width: 180px; /* ancho máximo */
+  object-fit: contain; /* evita deformar el logo */
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
