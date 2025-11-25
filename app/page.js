@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <div>
         <Video
-          videoSrc="/fotos/videoExample.mp4"
+          videoSrc="/fotos/VIDEO TDMEX.mp4"
           title="TDMEX"
           subtitle="La mejor desicion en transporte"
           overlay={true}
