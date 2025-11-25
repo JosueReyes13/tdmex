@@ -1,45 +1,30 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import styles from "./Contacto.module.css";
 
 function Contacto() {
   const form = useRef();
-  //const controls = useAnimation();
   const sectionRef = useRef(null);
   const isVisible = useInView(sectionRef, {
     once: true,
     threshold: 0.1,
   });
 
-  /*useEffect(() => {
-    const handleScroll = () => {
-      if (sectionRef.current) {
-        const sectionTop = sectionRef.current.getBoundingClientRect().top;
-        const sectionBottom = sectionRef.current.getBoundingClientRect().bottom;
-        const windowHeight = window.innerHeight;
-
-        if (sectionTop < windowHeight && sectionBottom > 0) {
-          controls.start("visible");
-        } else {
-          controls.start("hidden");
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [controls]);*/
-
-  const sendEmail = (e) => {
+const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm("service_fksozsc", "template_wbs7kf8", form.current, {
-        publicKey: "7_DjYNePQDfz9oLar",
-      })
+      .sendForm(
+        "service_bwlgmpo",
+        "template_y5bdtzl",
+        form.current,
+        {
+          publicKey: "5q22e5wdo3q9-U4nO",
+        }
+      )
       .then(
         () => {
           alert("Mensaje enviado con éxito");
@@ -157,7 +142,7 @@ function Contacto() {
                     <input
                       type="text"
                       id="name"
-                      name="name"
+                      name="from_name"  // Cambiado para mejor compatibilidad con EmailJS
                       placeholder="Nombre"
                       required
                     />
@@ -167,7 +152,7 @@ function Contacto() {
                     <input
                       type="email"
                       id="email"
-                      name="email"
+                      name="from_email"  // Cambiado para mejor compatibilidad con EmailJS
                       placeholder="Email"
                       required
                     />
