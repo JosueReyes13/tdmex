@@ -1,25 +1,29 @@
 import styles from "./Nosotros.module.css";
+import Video from "../components/Video";
 import CartaVolteable from "../components/CartaVolteable";
 
 export default function QuienesSomos() {
   return (
     <div className={styles.container}>
-      {/* Sección Quiénes Somos */}
-      <section className={styles.section}>
-        <h1 className={styles.mainTitle}>Quienes somos</h1>
-        <p className={styles.description}>
-          Somos una empresa dedicada al transporte de mercancía a nivel
+      <div>
+        <Video
+          videoSrc="/fotos/TDMEX 2.mp4"
+          title="Quienes somos"
+          subtitle="Somos una empresa dedicada al transporte de mercancía a nivel
           nacional, recorriendo ciudades importantes de México, teniendo de
-          experiencia 25 años y siempre dando el mejor servicio
-        </p>
-      </section>
+          experiencia 25 años y siempre dando el mejor servicio"
+          overlay={true}
+          overlayVariant="overlayDark"
+          titleSize="xlarge"
+          textAlign="center"
+        />
+      </div>
 
       {/* Sección Nuestra Historia */}
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>Nuestra Historia</h2>
 
         <div className={styles.grid}>
-          {/* Misión */}
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>Misión</h3>
             <p className={styles.cardText}>
@@ -30,7 +34,6 @@ export default function QuienesSomos() {
             </p>
           </div>
 
-          {/* Visión */}
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>Visión</h3>
             <p className={styles.cardText}>
@@ -66,10 +69,7 @@ export default function QuienesSomos() {
             />
           </div>
         </div>
-      </section>
-
-      {/* Sección Servicios */}
-      <section className={styles.section}>
+        {/* Sección Servicios */}
         <h2 className={styles.sectionTitle}>Nuestros servicios incluyen</h2>
         <div className={styles.services}>
           <div className={styles.serviceItem}>
