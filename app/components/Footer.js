@@ -58,10 +58,10 @@ function Footer() {
           </div>
           
           <div className={styles["footer-social"]}>
-            <a href="https://www.facebook.com/share/1B5nCrY6JH/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+            <a href="https://www.facebook.com/tdmexmx/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
             <a href="https://www.instagram.com/estetica__race?igsh=dm9hNXB5bmFtZmRw" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-            <a href="https://www.tiktok.com/@racespa?_t=ZM-8uxnPgoQ2PW&_r=1" target="_blank" rel="noopener noreferrer"><FaTiktok /></a>
-            <a href="https://wa.me/3334406091" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+            <a href="https://www.tiktok.com/@tdmex81?_r=1&_t=ZS-91jLruQaP5x" target="_blank" rel="noopener noreferrer"><FaTiktok /></a>
+            <a href="https://wa.me/3310766585" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
           </div>
         </div>
         

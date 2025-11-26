@@ -32,7 +32,7 @@ export default function Unidades() {
       id: 3,
       tipo: "Camión pesado (25 toneladas - Caja seca)",
       descripcion: "Perfecto para transporte seguro y protegido de carga pesada a largas distancias.",
-      imagen: "/fotos/unidad25-caja.jpg",
+      imagen: "/fotos/Cajaseca.jpeg",
       categoria: "pesado",
       caracteristicas: [
         "Monitoreo satelital 24/7",
@@ -45,7 +45,7 @@ export default function Unidades() {
       id: 4,
       tipo: "Camión pesado (25 toneladas - Plataforma)",
       descripcion: "Ideal para maquinaria o materiales de gran tamaño, gracias a su plataforma abierta y resistente.",
-      imagen: "/fotos/25tons.jpg",
+      imagen: "/fotos/Plataforma.jpg",
       categoria: "pesado",
       caracteristicas: [
         "Monitoreo satelital 24/7",
