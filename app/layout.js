@@ -7,6 +7,7 @@ export default function RootLayout({ children }) {
     <html lang="es">
       <head>
         <title>TDEMEX</title>
+        <link rel="icon" type="image/png" href="/fotos/TDMEX_ICON2.png" />
       </head>
       <body
         style={{

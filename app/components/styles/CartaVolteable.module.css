@@ -108,7 +108,7 @@
 @media (max-width: 768px) {
   .contenedorCarta {
     width: 280px;
-    height: 380px;
+    height: 280px;
     margin: 15px;
   }
 
@@ -116,20 +116,13 @@
     font-size: 1.5rem;
   }
 
+  .contenido {
+    font-size: 1rem;
+    line-height: 1.6;
+    width: 100%;
+  }
+
   .icono {
     font-size: 3.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .contenedorCarta {
-    width: 260px;
-    height: 360px;
-    margin: 10px;
-  }
-
-  .frente,
-  .atras {
-    padding: 20px;
   }
 }
