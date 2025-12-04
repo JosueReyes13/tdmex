@@ -40,14 +40,14 @@ function Footer() {
               </ul>
             </div>
             
-            <div className={styles["nav-column"]}>
+             {/* <div className={styles["nav-column"]}>
               <h4>LEGAL</h4>
               <ul>
                 <li><a href="#">Términos y Condiciones</a></li>
                 <li><a href="#">Aviso de Privacidad</a></li>
                 <li><a href="#">Contacto</a></li>
               </ul>
-            </div>
+            </div>*/}
           </div>
         </div>
         
