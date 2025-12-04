@@ -7,18 +7,21 @@
   padding: 2rem;
 }
 
+/* Imagen */
 .imageContainer {
   min-width: 300px;
-  align-items: center; /* Centra la imagen verticalmente dentro de su contenedor */
-  justify-content: center; /* Centra la imagen horizontalmente dentro de su contenedor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image {
   width: 100%;
-  height: 370px; /* Altura fija para controlar el recorte */
-  justify-content: center;
+  height: 370px;
+  object-fit: cover;
 }
 
+/* Texto */
 .textContainer {
   display: grid;
 }
@@ -28,7 +31,6 @@
   font-size: 2rem;
   font-weight: 700;
   color: #0c4b45;
-  width: 100%;
   text-align: center;
 }
 
@@ -41,6 +43,7 @@
   text-align: center;
 }
 
+/* Ciudades */
 .ciudadesContainer {
   display: grid;
   width: 100%;
@@ -65,10 +68,10 @@
   border-radius: 8px;
   font-size: 1rem;
   color: #0c4b45;
-  transition: all 0.3s ease;
+  font-weight: 500;
   display: flex;
   align-items: center;
-  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .ciudadItem:hover {
@@ -81,52 +84,50 @@
 .ciudadItem::before {
   content: "📍";
   margin-right: 0.8rem;
-  font-size: 0.9rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ========== RESPONSIVE ========== */
+
+/* Tablets (pantallas medianas) */
+@media (max-width: 992px) {
   .container {
-    display: grid;
     grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  .image {
+    height: 300px;
+  }
+
+  .ciudadesList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .container {
     padding: 1rem;
     gap: 1.5rem;
   }
 
-  .imageContainer {
-    min-width: 100%;
-    margin: 0;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-  }
-  .ciudadesContainer {
-    display: grid;
-    width: 100%;
-    padding-top: 20px;
-    justify-content: center;
-  }
   .heading {
-    justify-content: center;
+    font-size: 1.6rem;
   }
+
   .text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 1rem;
   }
-  .heading {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+
+  .image {
+    height: 250px;
   }
 
   .ciudadesList {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    gap: 0.8rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    max-width: 500px;
+    grid-template-columns: 1fr; /* 🔥 Mejor para celulares */
+    /* Si quieres 2 columnas pequeñas en celular, cambia por:
+       grid-template-columns: repeat(2, 1fr);
+    */
   }
 }
