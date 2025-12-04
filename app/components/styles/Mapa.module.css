@@ -1,6 +1,6 @@
 .container {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 3rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -8,7 +8,6 @@
 }
 
 .imageContainer {
-  flex: 1;
   min-width: 300px;
   align-items: center; /* Centra la imagen verticalmente dentro de su contenedor */
   justify-content: center; /* Centra la imagen horizontalmente dentro de su contenedor */
@@ -16,19 +15,12 @@
 
 .image {
   width: 100%;
-  max-width: 500px;
-  height: 350px; /* Altura fija para controlar el recorte */
-  border-radius: 8px;
-  object-fit: cover; /* Esto recorta la imagen manteniendo proporciones */
-  object-position: center 15%; /* Ajusta el recorte vertical: 0% top, 100% bottom */
+  height: 370px; /* Altura fija para controlar el recorte */
+  justify-content: center;
 }
 
 .textContainer {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  display: grid;
 }
 
 .heading {
@@ -37,6 +29,7 @@
   font-weight: 700;
   color: #0c4b45;
   width: 100%;
+  text-align: center;
 }
 
 .text {
@@ -45,18 +38,19 @@
   line-height: 1.6;
   color: #0c4b45;
   white-space: pre-line;
+  text-align: center;
 }
 
-.ciudadesWrapper {
+.ciudadesContainer {
+  display: grid;
   width: 100%;
-  display: flex;
-  justify-content: flex-end;
   padding-top: 20px;
+  justify-content: center;
 }
 
 .ciudadesList {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.8rem;
   list-style: none;
   padding: 0;
@@ -93,7 +87,8 @@
 /* Responsive */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     padding: 1rem;
     gap: 1.5rem;
   }
@@ -101,13 +96,37 @@
   .imageContainer {
     min-width: 100%;
     margin: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+  .ciudadesContainer {
+    display: grid;
+    width: 100%;
+    padding-top: 20px;
+    justify-content: center;
+  }
+  .heading {
+    justify-content: center;
+  }
+  .text {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-
   .heading {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+  }
+
+  .ciudadesList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 0.8rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 500px;
   }
 }

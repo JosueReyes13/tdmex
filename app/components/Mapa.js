@@ -103,7 +103,7 @@ export default function Mapa() {
           comerciales del país:
         </p>
         <motion.div
-          className={styles.ciudadesWrapper}
+          className={styles.ciudadesContainer}
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
           variants={contenedorListaAnimacion}

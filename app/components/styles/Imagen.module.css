@@ -1,5 +1,5 @@
 .gallery {
-  padding: 4rem 0;
+  padding: 3rem;
   background-color: #fff;
   width: 100%;
 }
@@ -164,7 +164,7 @@
   .descriptionItem {
     align-items: center;
   }
-  
+
   .checkIcon {
     margin-top: 2px;
   }

@@ -46,7 +46,7 @@
 
 .cartasvolteables {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(1, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -169,8 +169,14 @@
 
   .cartasvolteables {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 1.5rem;
+    justify-content: center;
     margin-bottom: 2rem;
+  }
+
+  .containerCartas {
+    display: grid;
+    justify-content: center;
   }
 }

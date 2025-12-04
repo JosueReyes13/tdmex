@@ -44,7 +44,7 @@ export default function QuienesSomos() {
             </p>
           </div>
         </div>
-        <div>
+        <div className={styles.containerCartas}>
           <h2 className={styles.sectionTitle}>Nuestros Valores</h2>
           <div className={styles.cartasvolteables}>
             <CartaVolteable
