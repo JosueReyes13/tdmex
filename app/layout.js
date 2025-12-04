@@ -6,7 +6,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <head>
-        <title>TDMEX</title>
+        <title>TDEMEX</title>
       </head>
       <body
         style={{
