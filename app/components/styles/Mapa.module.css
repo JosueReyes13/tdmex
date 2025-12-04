@@ -125,7 +125,7 @@
   }
 
   .ciudadesList {
-    grid-template-columns: 1fr; /* 🔥 Mejor para celulares */
+    grid-template-columns: repeat(2, 1fr); /* 🔥 Mejor para celulares */
     /* Si quieres 2 columnas pequeñas en celular, cambia por:
        grid-template-columns: repeat(2, 1fr);
     */
