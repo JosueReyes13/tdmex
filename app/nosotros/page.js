@@ -9,9 +9,8 @@ export default function QuienesSomos() {
         <Video
           videoSrc="/fotos/TDMEX 2.mp4"
           title="Quienes somos"
-          subtitle="Somos una empresa dedicada al transporte de mercancía a nivel
-          nacional, recorriendo ciudades importantes de México, teniendo de
-          experiencia 25 años y siempre dando el mejor servicio"
+          subtitle="Somos una empresa dedicada al transporte de mercancía a nivel nacional, 
+          recorriendo ciudades importantes de México y dando el mejor servicio con más de 25 años de experiencia."
           overlay={true}
           overlayVariant="overlayDark"
           titleSize="xlarge"

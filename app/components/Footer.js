@@ -16,27 +16,26 @@ function Footer() {
             <div className={styles["nav-column"]}>
               <h4>SOBRE NOSOTROS</h4>
               <ul>
-                <li><a href="#">Nuestra historia</a></li>
-                <li><a href="#">Equipo</a></li>
-                <li><a href="#">Valores</a></li>
+                <li><a href="/nosotros">Nuestra historia</a></li>
+                <li><a href="/nosotros">Equipo</a></li>
+                <li><a href="/nosotros">Valores</a></li>
               </ul>
             </div>
             
-            <div className={styles["nav-column"]}>
+            {/* <div className={styles["nav-column"]}>
               <h4>PRODUCTOS</h4>
               <ul>
                 <li><a href="#">Catálogo</a></li>
                 <li><a href="#">Novedades</a></li>
                 <li><a href="#">Ofertas</a></li>
               </ul>
-            </div>
+            </div>*/}
             
             <div className={styles["nav-column"]}>
               <h4>SERVICIOS</h4>
               <ul>
-                <li><a href="#">Distribuidores</a></li>
-                <li><a href="#">Online Store</a></li>
-                <li><a href="#">Soporte</a></li>
+                <li><a href="/unidades">Unidades</a></li>
+                <li><a href="/contacto">Soporte</a></li>
               </ul>
             </div>
             
@@ -59,7 +58,7 @@ function Footer() {
           
           <div className={styles["footer-social"]}>
             <a href="https://www.facebook.com/tdmexmx/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-            <a href="https://www.instagram.com/estetica__race?igsh=dm9hNXB5bmFtZmRw" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+             {/*<a href="https://www.instagram.com/estetica__race?igsh=dm9hNXB5bmFtZmRw" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>*/}
             <a href="https://www.tiktok.com/@tdmex81?_r=1&_t=ZS-91jLruQaP5x" target="_blank" rel="noopener noreferrer"><FaTiktok /></a>
             <a href="https://wa.me/3310766585" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
           </div>
