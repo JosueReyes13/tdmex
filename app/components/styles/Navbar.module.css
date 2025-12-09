@@ -1,4 +1,5 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+
 /* Reset básico */
 .navbar {
   font-family: "Roboto", sans-serif;
@@ -25,10 +26,10 @@
 }
 
 .navbarMainbg {
-  background-color: #ffffff; /* Fondo blanco */
+  background-color: #ffffff;
   padding: 0px;
   position: relative;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid #e0e0e0;
 }
 
@@ -54,7 +55,7 @@
 }
 
 .navbarContent ul li a {
-  color: #000000; /* Texto gris oscuro */
+  color: #000000;
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
@@ -67,7 +68,7 @@
 }
 
 .navbarContent ul li.active a {
-  color: #ffffff; /* Azul moderno para activo */
+  color: #ffffff;
   background-color: transparent;
   transition: all 0.7s;
 }
@@ -84,14 +85,15 @@
   vertical-align: middle;
   font-weight: 900;
   transition: 0.5s;
-  color: #666; /* Color de la flecha */
+  color: #666;
 }
 
 .navbarContent .active a:not(:only-child):after {
   transform: rotate(90deg);
-  color: #2563eb; /* Color de flecha cuando está activo */
+  color: #2563eb;
 }
 
+/* Selector animado */
 .horiSelector {
   display: inline-block;
   position: absolute;
@@ -100,7 +102,7 @@
   left: 0px;
   transition-duration: 0.6s;
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  background-color: #0c4b45; /* Azul para el selector */
+  background-color: #0c4b45;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   margin-top: 10px;
@@ -113,7 +115,7 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  background-color: #0c4b45; /* Mismo azul para las partes curvas */
+  background-color: #0c4b45;
   bottom: 10px;
 }
 
@@ -132,7 +134,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #ffffff; /* Fondo blanco para los círculos */
+  background-color: #ffffff;
 }
 
 .horiSelector .right:before {
@@ -161,19 +163,19 @@
 }
 
 .textDark {
-  color: #333333 !important; /* Texto oscuro */
+  color: #333333 !important;
 }
 
 /* Estados hover */
 .navbarContent ul li a:hover {
-  color: #000000; /* Azul al hacer hover */
-  background-color: rgba(37, 99, 235, 0.05); /* Fondo muy suave al hover */
+  color: #000000;
+  background-color: rgba(37, 99, 235, 0.05);
   border-radius: 6px;
   margin: 2px;
 }
 
 .navbarContent ul li.active a:hover {
-  color: #000000; /* Azul más oscuro para activo con hover */
+  color: #000000;
 }
 
 /* Estilos del toggle */
@@ -182,13 +184,15 @@
   background: transparent;
   cursor: pointer;
   padding: 12px;
-  color: #333333; /* Color oscuro para el ícono del toggle */
+  color: #333333;
   border-radius: 6px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: none; /* Oculto por defecto, se muestra en móvil */
 }
 
 .navbarToggler:hover {
   background-color: rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
 }
 
 .navbarToggler:focus {
@@ -196,15 +200,19 @@
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
 }
 
+/* Animación para el ícono hamburguesa */
+.navbarToggler .rotate {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+/* Estilos del navbarCollapse */
 .navbarCollapse {
   transition: all 0.3s ease-in-out;
+  overflow: hidden;
 }
 
-.navbarCollapse.show {
-  display: block !important;
-}
-
-/* Media Queries */
+/* Media Queries - ESCRITORIO (992px y superior) */
 @media (min-width: 992px) {
   .navbarExpandCustom {
     display: flex !important;
@@ -214,19 +222,21 @@
     padding: 0 20px;
   }
 
+  .navbarCollapse {
+    display: flex !important;
+    flex-basis: auto;
+    flex-grow: 1;
+    max-height: none !important;
+    opacity: 1 !important;
+  }
+
   .navbarNav {
     flex-direction: row !important;
     display: flex !important;
   }
 
   .navbarToggler {
-    display: none;
-  }
-
-  .navbarCollapse {
-    display: flex !important;
-    flex-basis: auto;
-    flex-grow: 1;
+    display: none; /* Oculto en escritorio */
   }
 
   .navbarContent li {
@@ -239,10 +249,26 @@
   }
 }
 
+/* Media Queries - MÓVIL (hasta 991px) */
 @media (max-width: 991px) {
   .navbarExpandCustom {
     flex-direction: column;
     padding: 10px;
+  }
+
+  /* CRÍTICO: Menú oculto por defecto en móvil */
+  .navbarCollapse {
+    display: none !important;
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+  }
+
+  .navbarCollapse.show {
+    display: block !important;
+    max-height: 500px; /* Altura suficiente para el menú */
+    opacity: 1;
   }
 
   .navbarNav {
@@ -264,6 +290,15 @@
     margin: 2px 0;
   }
 
+  .navbarToggler {
+    display: block; /* Mostrar botón hamburguesa en móvil */
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 1000;
+  }
+
+  /* Ajustes para el selector animado en móvil */
   .horiSelector {
     margin-top: 0px;
     margin-left: 10px;
@@ -333,16 +368,16 @@
 }
 
 .navbarLogo img {
-  height: 50px; /* tamaño del logo */
-  width: auto; /* mantiene proporción */
-  max-width: 180px; /* ancho máximo */
-  object-fit: contain; /* evita deformar el logo */
+  height: 50px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .navbarLogo img:hover {
-  transform: scale(1.05); /* efecto suave al pasar el cursor */
-  filter: brightness(1.1); /* leve brillo para destacar */
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 /* Tamaño del logo en móvil */
@@ -355,14 +390,19 @@
 
 /* Estilos adicionales para mejor apariencia */
 .navbarContent ul li a i {
-  color: #000000; /* Color para los íconos */
+  color: #000000;
   transition: color 0.3s ease;
 }
 
 .navbarContent ul li.active a i {
-  color: #ffffff; /* Color azul para íconos activos */
+  color: #ffffff;
 }
 
 .navbarContent ul li a:hover i {
-  color: #000000; /* Color azul para íconos al hover */
+  color: #000000;
+}
+
+/* Asegurar que el navbar ocupe todo el ancho */
+.navbar {
+  width: 100%;
 }

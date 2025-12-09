@@ -11,7 +11,7 @@ export default function Home() {
         <Video
           videoSrc="/fotos/VIDEO TDMEX.mp4"
           title="TDMEX"
-          subtitle="La mejor desicion en transporte"
+          subtitle="La mejor desición en transporte"
           overlay={true}
           overlayVariant="overlayDark"
           titleSize="xlarge"
