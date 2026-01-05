@@ -380,6 +380,101 @@
   filter: brightness(1.1);
 }
 
+/* Estilos del botón de WhatsApp */
+.whatsappButton {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #0c4b45; /* El verde que especificaste */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(12, 75, 69, 0.3);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+}
+
+.whatsappButton:hover {
+  background-color: #0a3c37; /* Un tono un poco más oscuro al hover */
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(12, 75, 69, 0.4);
+}
+
+.whatsappButton:active {
+  transform: scale(0.95);
+}
+
+.whatsappIcon {
+  color: white;
+  font-size: 32px;
+  transition: transform 0.3s ease;
+}
+
+.whatsappButton:hover .whatsappIcon {
+  transform: scale(1.1);
+}
+
+/* Animación de pulso sutil */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(12, 75, 69, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(12, 75, 69, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(12, 75, 69, 0);
+  }
+}
+
+/* Transiciones para mostrar/ocultar al hacer scroll */
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .whatsappButton {
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+  }
+  
+  .whatsappIcon {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsappButton {
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .whatsappIcon {
+    font-size: 26px;
+  }
+}
+
+
 /* Tamaño del logo en móvil */
 @media (max-width: 768px) {
   .navbarLogo img {
