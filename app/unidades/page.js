@@ -43,7 +43,7 @@ export default function Unidades() {
     },
     {
       id: 4,
-      tipo: "Camión pesado (25 toneladas - Plataforma)",
+      tipo: "Plataformas y LowBoy (25 - 60 toneladas - Plataforma)",
       descripcion: "Ideal para maquinaria o materiales de gran tamaño, gracias a su plataforma abierta y resistente.",
       imagen: "/fotos/Plataforma.jpg",
       categoria: "pesado",

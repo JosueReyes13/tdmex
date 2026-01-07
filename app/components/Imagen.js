@@ -23,8 +23,8 @@ export default function Imagen() {
     {
       id: 2,
       imagen: "./fotos/Segudovalor.jpeg",
-      alt: "Logística Integral",
-      titulo: "Logística Integral",
+      alt: "Servicio especializado LowBoy",
+      titulo: "Servicio especializado LowBoy",
       descripcion: [
         "Planificación, coordinación y ejecución de toda la cadena logística.",
         "Administración de inventarios y control de existencias.",
