@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
 import Video from "@/app/components/Video";
@@ -16,6 +18,10 @@ export default function Home() {
           overlayVariant="overlayDark"
           titleSize="xlarge"
           textAlign="center"
+          // Nuevas props del botón (opcionales)
+          buttonText="Solicitar servicio"
+          showButton={true}
+          buttonVariant="primary" // o "secondary", "accent"
         />
       </div>
       <div>

@@ -86,22 +86,96 @@
   max-width: 600px;
 }
 
-/* Botón */
+/* Botón - SIN SOMBRA Y MÁS PEQUEÑO */
 .ctaButton {
-  background: #3b82f6;
-  color: white;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1.1rem;
+  background: #0c4b45; /* Color de fondo normal */
+  color: white; /* Color de texto normal */
+  padding: 0.9rem 2.2rem; /* Más pequeño */
+  border: 2px solid #0c4b45; /* Borde del mismo color */
+  border-radius: 50px;
+  font-size: 1rem; /* Texto más pequeño */
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  /* SIN box-shadow (sin sombra) */
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: 1rem;
+  min-width: 180px; /* Ancho mínimo más pequeño */
 }
 
+/* Efecto shine (barra de luz que se desliza) - más sutil */
+.ctaButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease-in;
+  z-index: -1;
+}
+
+.ctaButton:hover::before {
+  left: 100%;
+}
+
+/* ESTILOS AL HOVER - SIN SOMBRA */
 .ctaButton:hover {
-  background: #2563eb;
-  transform: translateY(-2px);
+  background: white; /* Fondo blanco al hover */
+  color: #0c4b45; /* Texto verde oscuro al hover */
+  border-color: white; /* Borde blanco al hover */
+  transform: translateY(-2px); /* Elevación más sutil */
+  /* SIN box-shadow en hover */
+}
+
+.ctaButton:active {
+  transform: translateY(0px); /* Sin elevación al hacer click */
+}
+
+/* Variantes - también sin sombra */
+.ctaButton.primary {
+  background: #0c4b45;
+  border: 2px solid #0c4b45;
+}
+
+.ctaButton.primary:hover {
+  background: white;
+  color: #0c4b45;
+  border-color: white;
+}
+
+.ctaButton.secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.ctaButton.secondary:hover {
+  background: white;
+  color: #0c4b45;
+  border-color: white;
+}
+
+.ctaButton.accent {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border: 2px solid #10b981;
+}
+
+.ctaButton.accent:hover {
+  background: white;
+  color: #0c4b45;
+  border-color: white;
 }
 
 /* Alturas */
@@ -113,4 +187,39 @@
 }
 .screenHeight {
   height: 100vh;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title.xlarge {
+    font-size: 3.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    max-width: 90%;
+  }
+
+  .ctaButton {
+    padding: 0.8rem 2rem;
+    font-size: 0.95rem;
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title.xlarge {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ctaButton {
+    padding: 0.7rem 1.8rem;
+    font-size: 0.9rem;
+    min-width: 150px;
+  }
 }
