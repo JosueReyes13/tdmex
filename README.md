@@ -2,6 +2,10 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+## Configuración de EmailJS
+
+Copia `.env.example` como `.env.local` y completa `EMAILJS_SERVICE_ID`, `EMAILJS_TEMPLATE_ID` y `EMAILJS_PUBLIC_KEY`. Se usan únicamente en el servidor mediante `app/api/contact/route.ts`.
+
 First, run the development server:
 
 ```bash
@@ -16,7 +20,7 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+La aplicación está migrada a TypeScript; la página principal es `app/page.tsx`.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 

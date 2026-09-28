@@ -1,7 +1,9 @@
 import styles from './Unidades.module.css';
 
 export default function Unidades() {
-  const unidades = [
+  type Categoria = "ligero" | "mediano" | "pesado";
+  type Unidad = { id: number; tipo: string; descripcion: string; imagen: string; categoria: Categoria; caracteristicas: string[] };
+  const unidades: Unidad[] = [
     {
       id: 1,
       tipo: "Camión ligero (3 a 8 toneladas)",
@@ -63,13 +65,13 @@ export default function Unidades() {
     pesado: "Unidades Pesadas (25 ton)"
   };
 
-  const unidadesPorCategoria = unidades.reduce((acc, unidad) => {
+  const unidadesPorCategoria = unidades.reduce<Record<Categoria, Unidad[]>>((acc, unidad) => {
     if (!acc[unidad.categoria]) {
       acc[unidad.categoria] = [];
     }
     acc[unidad.categoria].push(unidad);
     return acc;
-  }, {});
+  }, { ligero: [], mediano: [], pesado: [] });
 
   return (
     <div className={styles.container}>

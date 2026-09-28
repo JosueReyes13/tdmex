@@ -15,5 +15,12 @@
     "react": "19.2.1",
     "react-dom": "19.2.1",
     "react-icons": "^5.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "baseline-browser-mapping": "^2.9.19",
+    "typescript": "7.0.2"
   }
 }

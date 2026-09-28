@@ -19,7 +19,7 @@ export default function Mapa() {
   const sectionRef = useRef(null);
   const isVisible = useInView(sectionRef, {
     once: false,
-    threshold: 0.4,
+    amount: 0.4,
   });
 
   const imagenAnimacion = {
@@ -32,7 +32,7 @@ export default function Mapa() {
       x: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -47,7 +47,7 @@ export default function Mapa() {
       x: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };

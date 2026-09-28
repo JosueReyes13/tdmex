@@ -1,5 +1,5 @@
 .contacto {
-  padding: 60px 0;
+  padding: clamp(36px, 6vw, 72px) 0;
   background-color: #ffffff;
   text-align: center;
 }
@@ -27,7 +27,7 @@
   display: flex;
   gap: 30px;
   background-color: #ffffff;
-  padding: 30px;
+  padding: clamp(18px, 3vw, 30px);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -64,7 +64,7 @@
 
 .mapContainer {
   width: 100%;
-  height: 400px;
+  height: clamp(220px, 32vw, 400px);
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -146,6 +146,7 @@
   background-color: transparent;
   font-family: "Raleway", sans-serif;
   transition: all 0.3s ease-in-out;
+  min-width: 0;
 }
 
 /* Efecto de foco en los inputs y textarea */
@@ -187,6 +188,7 @@
 
 /* Responsividad */
 @media screen and (max-width: 799px) {
+  .container { width: min(92%, 600px); }
   .contactoContent {
     flex-direction: column;
     padding: 20px;
@@ -199,8 +201,18 @@
   .contactoFormulario {
     padding: 20px;
   }
+
+  .infoItem { align-items: flex-start; }
+  .mapContainer { height: 240px; }
   
   .contactoTitulo {
     font-size: 1.7rem;
   }
+}
+
+@media screen and (max-width: 420px) {
+  .contactoContent { padding: 12px; gap: 18px; }
+  .contactoFormulario { padding: 16px; }
+  .contactoSubtitulo { line-height: 1.5; }
+  .ctaC { width: 100%; margin-top: 16px; }
 }

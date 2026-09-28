@@ -1,20 +1,23 @@
 .container {
   width: 100%;
-  min-height: 100vh;
+  min-height: 70vh;
   background-color: #ffffff;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 20px;
+  padding: clamp(32px, 6vw, 70px) 20px;
 }
 
 .title {
   color: #0c4b45;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  text-align: center;
 }
 
 .description {
   color: #0c4b45;
-  font-size: 2rem;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  text-align: center;
+  margin-top: .75rem;
 }

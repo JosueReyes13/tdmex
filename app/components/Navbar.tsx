@@ -32,7 +32,7 @@ const Navbar = () => {
     const tabsNewAnim = document.getElementById('navbarSupportedContent');
     if (!tabsNewAnim) return;
 
-    const activeItemNewAnim = tabsNewAnim.querySelector(`.${styles.active}`);
+    const activeItemNewAnim = tabsNewAnim.querySelector<HTMLElement>(`.${styles.active}`);
     if (!activeItemNewAnim) return;
 
     const activeWidthNewAnimHeight = activeItemNewAnim.offsetHeight;
@@ -40,7 +40,7 @@ const Navbar = () => {
     const itemPosNewAnimTop = activeItemNewAnim.offsetTop;
     const itemPosNewAnimLeft = activeItemNewAnim.offsetLeft;
 
-    const horiSelector = document.querySelector(`.${styles.horiSelector}`);
+    const horiSelector = document.querySelector<HTMLElement>(`.${styles.horiSelector}`);
     if (horiSelector) {
       horiSelector.style.cssText = `
         top: ${itemPosNewAnimTop}px;

@@ -71,7 +71,7 @@ export default function Imagen() {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -80,7 +80,7 @@ export default function Imagen() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, {
     once: false, // Cambiado a false para que se active cada vez
-    threshold: 0.4, // Se activa cuando el 30% del componente es visible
+    amount: 0.4, // Se activa cuando el 40% del componente es visible
   });
 
   return (

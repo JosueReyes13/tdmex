@@ -4,6 +4,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import styles from "./styles/Video.module.css";
 
+type VideoProps = {
+  videoSrc: string; title?: string; subtitle?: string; className?: string;
+  overlay?: boolean; overlayVariant?: string; height?: string; muted?: boolean;
+  autoPlay?: boolean; loop?: boolean; playsInline?: boolean; titleSize?: string;
+  textColor?: string; textAlign?: string; buttonText?: string; showButton?: boolean;
+  buttonVariant?: string; whatsappNumber?: string; whatsappMessage?: string; buttonLink?: string;
+};
+
 const Video = ({
   videoSrc,
   title,
@@ -25,8 +33,8 @@ const Video = ({
   // Nuevas props para WhatsApp
   whatsappNumber = "+523310766585",
   whatsappMessage = "Hola, me gustaría obtener más información", // Mensaje predefinido
-  buttonLink, // Para enlaces normales (opcional)
-}) => {
+  buttonLink,
+}: VideoProps) => {
   const containerClass = `${styles.container} ${styles[height]} ${className}`;
   const overlayClass = `${styles.overlay} ${styles[overlayVariant]}`;
   const titleClass = `${styles.title} ${styles[titleSize]}`;
