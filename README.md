@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Configuración de EmailJS
 
-Copia `.env.example` como `.env.local` y completa `EMAILJS_SERVICE_ID`, `EMAILJS_TEMPLATE_ID` y `EMAILJS_PUBLIC_KEY`. Se usan únicamente en el servidor mediante `app/api/contact/route.ts`.
+Copia `.env.example` como `.env.local` y completa `EMAILJS_SERVICE_ID`, `EMAILJS_TEMPLATE_ID`, `EMAILJS_PUBLIC_KEY` y `EMAILJS_PRIVATE_KEY`. Se usan únicamente en el servidor mediante `app/api/contact/route.ts`.
 
 First, run the development server:
 

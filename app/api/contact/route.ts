@@ -6,8 +6,9 @@ export async function POST(request: Request) {
     const serviceId = process.env.EMAILJS_SERVICE_ID?.trim();
     const templateId = process.env.EMAILJS_TEMPLATE_ID?.trim();
     const publicKey = process.env.EMAILJS_PUBLIC_KEY?.trim();
+    const privateKey = process.env.EMAILJS_PRIVATE_KEY?.trim();
 
-    if (!serviceId || !templateId || !publicKey) {
+    if (!serviceId || !templateId || !publicKey || !privateKey) {
       console.error("EmailJS: faltan variables de entorno en Vercel.");
       return NextResponse.json({ error: "El servicio de contacto no está configurado." }, { status: 500 });
     }
@@ -19,6 +20,7 @@ export async function POST(request: Request) {
         service_id: serviceId,
         template_id: templateId,
         user_id: publicKey,
+        accessToken: privateKey,
         template_params: {
           from_name: data.from_name,
           from_email: data.from_email,
